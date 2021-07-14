@@ -4,17 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--Spring boot-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>com.wml</groupId>
     <artifactId>wml-dongbao-mall-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <packaging>pom</packaging>
 
     <modules>
         <!--业务模块接口层-->
         <module>wml-dongbao-api</module>
         <!--业务模块实现层-->
-        <module>wml-dongbao-serivce</module>
+        <module>wml-dongbao-service</module>
         <!--公共包-->
         <module>wml-dongbao-common</module>
         <!--代码生成器-->
@@ -24,6 +31,21 @@
         <!--定时任务模块-->
         <module>wml-dongbao-job</module>
     </modules>
+
+    <!--工具类的jar包-->
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+        </dependency>
+
+        <!--spring validation 校验-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>
