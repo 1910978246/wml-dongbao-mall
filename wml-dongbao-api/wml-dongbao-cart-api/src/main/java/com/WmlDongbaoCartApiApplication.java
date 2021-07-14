@@ -1,5 +1,6 @@
 package com;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
@@ -12,6 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WmlDongbaoCartApiApplication {
     //这是一个main方法，是程序的入口：
     public static void main(String[] args) {
-
+        SpringApplication.run(WmlDongbaoCartApiApplication.class,args);
     }
 }
