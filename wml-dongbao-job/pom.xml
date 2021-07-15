@@ -13,6 +13,7 @@
     <groupId>com.wml</groupId>
     <artifactId>wml-dongbao-job</artifactId>
     <name>wml-dongbao-job</name>
+    <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
 
     <properties>

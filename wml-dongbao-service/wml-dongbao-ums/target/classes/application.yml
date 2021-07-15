@@ -4,3 +4,18 @@ spring:
     url: jdbc:mysql://localhost:3306/wml-dongbao-test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  profiles:
+    active: dev
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+#UmsMemberMapper.xml位置
+  mapper-locations:
+    - classpath*:/com/wml/dongbao/ums/mapper/xml/*.xml
+#存放实体类的包位置
+  type-aliases-package: com.wml.dongbao.ums.entity

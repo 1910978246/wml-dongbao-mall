@@ -12,7 +12,9 @@
 
     <groupId>com.wml</groupId>
     <artifactId>wml-dongbao-application-web</artifactId>
-    <name>wml-dongbao-application</name>
+    <version>2.4.1</version>
+    <name>wml-dongbao-application-web</name>
+    <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
 
     <modules>

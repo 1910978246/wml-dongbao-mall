@@ -1,0 +1,4 @@
+com\wml\dongbao\ums\WmlDongbaoUmsApplication.class
+com\wml\dongbao\ums\config\MyHandler.class
+com\wml\dongbao\ums\service\impl\UmsMemberServiceImpl.class
+com\wml\dongbao\ums\mapper\UmsMemberMapper.class

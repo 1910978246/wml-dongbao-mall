@@ -1,5 +1,6 @@
 package com;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description: com
  * @version: 1.0
  */
-@SpringBootApplication
+//扫描portal包
+@SpringBootApplication(scanBasePackages = {"com.wml"})
+//扫描mapper
+@MapperScan("com.wml.dongbao.ums.mapper")
 public class WmlDongbaoPortalWebApplication {
     //这是一个main方法，是程序的入口：
     public static void main(String[] args) {

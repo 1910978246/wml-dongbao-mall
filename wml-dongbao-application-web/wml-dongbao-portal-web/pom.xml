@@ -3,15 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>com.wml</groupId>
+        <artifactId>wml-dongbao-application-web</artifactId>
         <version>2.4.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wml</groupId>
     <artifactId>wml-dongbao-portal-web</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <name>wml-dongbao-portal-web</name>
     <description>Demo project for Spring Boot</description>
 
@@ -20,6 +20,24 @@
     </properties>
 
     <dependencies>
+        <!--因为要引用ums-api所以依赖于wml-dongbao-ums-api-->
+        <dependency>
+            <groupId>com.wml</groupId>
+            <artifactId>wml-dongbao-ums-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wml</groupId>
+            <artifactId>wml-dongbao-ums</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--web项目所需的依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
