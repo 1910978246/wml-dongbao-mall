@@ -1,6 +1,7 @@
 package com.wml.dongbao.ums.service.impl;
 
 import com.wml.dongbao.ums.entity.UmsMember;
+import com.wml.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.wml.dongbao.ums.mapper.UmsMemberMapper;
 import com.wml.dongbao.ums.service.UmsMemberService;
@@ -38,8 +39,9 @@ public class UmsMemberServiceImpl implements UmsMemberService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Override
-    public String register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO) {
+    @Override//注册
+    public String register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO)
+    {
         //要把UmsMemberRegisterParamDTO这个bean转化成数据库要存的bean
         UmsMember umsMember = new UmsMember();
         BeanUtils.copyProperties(umsMemberRegisterParamDTO,umsMember);//(原路径,目标对象)
@@ -53,9 +55,24 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         return "success";
     }
 
-
-
-
-
+    @Override//登录
+    public String login(UmsMemberLoginParamDTO umsMemberLoginParamDTO)
+    {
+        UmsMember umsMember = umsMemberMapper.selectByName(umsMemberLoginParamDTO.getUsername());//查询username
+        if (null != umsMember)
+        {
+            String passwordDb = umsMember.getPassword();//数据库里的原始密码
+            //判断密码
+            if (!passwordEncoder.matches(umsMemberLoginParamDTO.getPassword(),passwordDb))
+            {
+                return "密码不正确";
+            }
+        }else
+            {
+                return"用户不存在";
+            }
+        System.out.println("登录成功");
+        return "token";
+    }
 
 }

@@ -3,6 +3,7 @@ package com.wml.dongbao.ums.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wml.dongbao.ums.entity.UmsMember;
+import com.wml.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 
 
@@ -15,6 +16,10 @@ import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
  * @since 2021-07-13
  */
 public interface UmsMemberService {
+    //注册
     public String register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO);
+
+    //登录
+    public String login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
 
 }
