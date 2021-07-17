@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
  * @Description: com.wml.dongbao.portal.web.advice
  * @version: 1.0
  */
-
+//异常处理
 @ControllerAdvice//同一异常处理
 public class ValidateHandler extends ResponseEntityExceptionHandler {//应实体异常处理程序
 

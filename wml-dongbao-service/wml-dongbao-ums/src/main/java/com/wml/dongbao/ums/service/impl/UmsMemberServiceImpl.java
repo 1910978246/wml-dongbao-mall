@@ -1,5 +1,6 @@
 package com.wml.dongbao.ums.service.impl;
 
+import com.wml.dongbao.common.until.JwtUtil;
 import com.wml.dongbao.ums.entity.UmsMember;
 import com.wml.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
@@ -71,8 +72,12 @@ public class UmsMemberServiceImpl implements UmsMemberService {
             {
                 return"用户不存在";
             }
+
+        String  token = JwtUtil.creatToken(umsMember.getPassword());//token
+
+
         System.out.println("登录成功");
-        return "token";
+        return token;
     }
 
 }

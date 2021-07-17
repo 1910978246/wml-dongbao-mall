@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @Description: com.wml.dongbao.common.base.result
  * @version: 1.0
  */
-//返回值
+//统一返回值
 @Data
 @Builder//不停的去建造他自己，链式调用
 public class ResultWrapper<T> implements Serializable {

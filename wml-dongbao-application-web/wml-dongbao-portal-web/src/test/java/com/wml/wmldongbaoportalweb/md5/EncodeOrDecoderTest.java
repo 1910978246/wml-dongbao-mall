@@ -1,4 +1,4 @@
-package com.wml.wmldongbaoportalweb.ms5;
+package com.wml.wmldongbaoportalweb.md5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

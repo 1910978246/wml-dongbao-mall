@@ -12,8 +12,8 @@ import lombok.ToString;
  * 200-299：支付业务的
  * 以此类推
  */
+//统一返回值
 //Enum:枚举 枚举类型 枚举类
-
 @ToString
 @AllArgsConstructor
 public enum StateCodeEnum {

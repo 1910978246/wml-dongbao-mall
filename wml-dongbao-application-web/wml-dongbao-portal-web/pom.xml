@@ -20,6 +20,7 @@
     </properties>
 
     <dependencies>
+
         <!--因为要引用ums-api所以依赖于wml-dongbao-ums-api-->
         <dependency>
             <groupId>com.wml</groupId>
