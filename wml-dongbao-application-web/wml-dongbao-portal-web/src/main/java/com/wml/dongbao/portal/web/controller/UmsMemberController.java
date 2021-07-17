@@ -45,7 +45,7 @@ public class UmsMemberController {
            return ""
        }*/
 
-        umsMemberService.register(umsMemberRegisterParamDTO);//register:注册帐户 寄存器 登记
+        //umsMemberService.register(umsMemberRegisterParamDTO);//register:注册帐户 寄存器 登记
 
         //简单状态码的方法写
         /*ResultWrapper<Object> resultWrapper = new ResultWrapper<>();
@@ -55,12 +55,12 @@ public class UmsMemberController {
         return resultWrapper;*/
 
         //使用builder的写状态码方法
-        return ResultWrapper.getSuccessBuilder().data(null).build();
+        return umsMemberService.register(umsMemberRegisterParamDTO);
     }
 
 
     @PostMapping("/login")//post新增get查询
-    public  String login(@RequestBody  UmsMemberLoginParamDTO umsMemberLoginParamDTO)//接收前的参数
+    public  ResultWrapper login(@RequestBody  UmsMemberLoginParamDTO umsMemberLoginParamDTO)//接收前的参数
     {
         return  umsMemberService.login(umsMemberLoginParamDTO);
 

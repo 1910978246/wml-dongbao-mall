@@ -1,8 +1,7 @@
 package com.wml.dongbao.ums.service;
 
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.wml.dongbao.ums.entity.UmsMember;
+import com.wml.dongbao.common.base.result.ResultWrapper;
 import com.wml.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 
@@ -17,9 +16,9 @@ import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
  */
 public interface UmsMemberService {
     //注册
-    public String register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO);
+    public ResultWrapper register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO);
 
     //登录
-    public String login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
+    public ResultWrapper login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
 
 }

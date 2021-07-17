@@ -17,10 +17,21 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 public enum StateCodeEnum {
-   /*
-   * 定义
-   * 请求成功
-   */
+     /*
+     *用户密码不正确
+     */
+    PASSWORD_ERROR(1001,"用户密码不正确"),
+
+    /*
+     *用户不存在
+     */
+
+    USER_EMPTY(1002,"用户不存在"),
+
+    /*
+    * 定义
+    * 请求成功
+    */
     SUCCESS(200,"请求成功"),
 
     /*
@@ -40,4 +51,13 @@ public enum StateCodeEnum {
     public String getMsg() {
         return msg;
     }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
 }
