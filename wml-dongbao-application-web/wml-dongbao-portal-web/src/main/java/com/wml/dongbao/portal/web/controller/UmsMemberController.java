@@ -1,7 +1,9 @@
 package com.wml.dongbao.portal.web.controller;
 
+import com.wml.dongbao.common.base.annotations.TokenCheck;
 import com.wml.dongbao.common.base.result.ResultWrapper;
 import com.wml.dongbao.common.until.JwtUtil;
+import com.wml.dongbao.ums.entity.UmsMember;
 import com.wml.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.wml.dongbao.ums.service.UmsMemberService;
@@ -83,6 +85,15 @@ public class UmsMemberController {
 
         System.out.println("正常业务");
         return ResultWrapper.getSuccessBuilder().build();
+    }
+
+    @PostMapping("/edit")
+    @TokenCheck//加注解拦截方法
+    public ResultWrapper edit(@RequestBody UmsMember umsMember){
+
+        System.out.println("edit");
+
+        return umsMemberService.edit(umsMember);
     }
 
 
