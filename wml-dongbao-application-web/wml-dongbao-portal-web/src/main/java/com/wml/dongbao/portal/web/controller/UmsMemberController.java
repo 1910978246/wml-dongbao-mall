@@ -70,11 +70,19 @@ public class UmsMemberController {
     //用这个接口代表了所有的后期需要鉴权的请求
     //修改用户信息
     //这是测试的   系统中的任意一个接口
-    @GetMapping("/test-verify")
+    /*@GetMapping("/test-verify")
     public String verify(String token){
         String s = JwtUtil.parseToken(token);
         String token1 = JwtUtil.creatToken(s);//解析完token有效在创建一个token，token延期
         return token1;
+    }*/
+
+    //修改用户信息
+    @GetMapping("/test-verify")
+    public ResultWrapper verify(String token){
+
+        System.out.println("正常业务");
+        return ResultWrapper.getSuccessBuilder().build();
     }
 
 

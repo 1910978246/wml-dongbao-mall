@@ -21,6 +21,8 @@ import org.springframework.stereotype.Service;
  *
  * @author 王明礼
  * @since 2021-07-13
+ *
+ * 业务逻辑在serivce层
  */
 @Service
 public class UmsMemberServiceImpl implements UmsMemberService {
@@ -76,14 +78,20 @@ public class UmsMemberServiceImpl implements UmsMemberService {
                 return ResultWrapper.getFailBuilder().code(StateCodeEnum.USER_EMPTY.getCode()).msg(StateCodeEnum.USER_EMPTY.getMsg()).build();
             }
 
-        String  token = JwtUtil.creatToken(umsMember.getPassword());//token
-
+        //String  token = JwtUtil.creatToken(umsMember.getPassword());//token
+        String  token = JwtUtil.creatToken(umsMember.getId()+"");
 
         UserMemberLoginResponse userMemberLoginResponse = new UserMemberLoginResponse();
         userMemberLoginResponse.setToken(token);
         umsMember.setPassword("");
         userMemberLoginResponse.setUmsMember(umsMember);
         return ResultWrapper.getSuccessBuilder().data(userMemberLoginResponse).build();
+    }
+
+    @Override//修改用户信息
+    public ResultWrapper edit(UmsMember umsMember) {
+        umsMemberMapper.updateById(umsMember);
+        return ResultWrapper.getSuccessBuilder().data(umsMember).build();
     }
 
 }

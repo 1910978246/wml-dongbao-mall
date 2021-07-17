@@ -2,6 +2,7 @@ package com.wml.dongbao.ums.service;
 
 
 import com.wml.dongbao.common.base.result.ResultWrapper;
+import com.wml.dongbao.ums.entity.UmsMember;
 import com.wml.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 
@@ -20,5 +21,8 @@ public interface UmsMemberService {
 
     //登录
     public ResultWrapper login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
+
+    //修改用户信息
+    public ResultWrapper edit(UmsMember umsMember);
 
 }
