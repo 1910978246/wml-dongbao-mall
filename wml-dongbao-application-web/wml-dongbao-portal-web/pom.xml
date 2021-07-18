@@ -20,6 +20,12 @@
     </properties>
 
     <dependencies>
+        <!--破解图形验证码所需的依赖-->
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+            <version>4.5.4</version>
+        </dependency>
 
         <!--因为要引用ums-api所以依赖于wml-dongbao-ums-api-->
         <dependency>

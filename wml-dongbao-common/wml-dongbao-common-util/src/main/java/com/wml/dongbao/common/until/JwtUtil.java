@@ -24,7 +24,7 @@ public class JwtUtil {
     {
         String token = Jwts.builder().setSubject(subject)
                 //.setExpiration(new Date(new Date().getTime()+1000*3))
-                .setExpiration(new Date(System.currentTimeMillis()+1000*60))//设置过期时间3秒
+                .setExpiration(new Date(System.currentTimeMillis()+1000*100))//设置过期时间3秒
 
                 .signWith(SignatureAlgorithm.HS256, secret)
 

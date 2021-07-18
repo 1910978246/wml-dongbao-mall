@@ -17,7 +17,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor())//把拦截器注入到
                 .addPathPatterns("/**")//把所有代码拦截住
-        .excludePathPatterns("/user-member/login");
+        .excludePathPatterns("/user-member/login")
+        .excludePathPatterns("/code/**");
     }
 
     @Bean
