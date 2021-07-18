@@ -49,9 +49,10 @@ public class ImageCode {
         //6、随机数
         Random random = new Random();
         //7、把随机数给code，但是先给code空字符串
+        //生成六位数字
         this.code = "";
 
-        for (int i=0 ;i<6;i++)
+       /* for (int i=0 ;i<6;i++)
         {
             //10以内的随机数
             String s = String.valueOf(random.nextInt(10));
@@ -65,12 +66,29 @@ public class ImageCode {
             //给字体划线
             graphics.setColor(new Color(15,20,247));
             graphics.drawLine((width/6*i),40,(width/6*i)+25,40-20);
-        }
+        }*/
 
         // 识别中文测试
        //graphics.setColor(new Color(0,0,0));
        //graphics.drawString("我是中国人",(width/6),40);
 
+
+        //
+        int num1 = random.nextInt(20);
+        int num2 = random.nextInt(20);
+        graphics.setColor(new Color(15,30,204));
+
+        graphics.drawString(num1+"",(width/6)*0+3,60);
+        graphics.drawString("+",(width/6)*1+3,60);
+        graphics.drawString(num2+"",(width/6)*2+3,60);
+        graphics.drawString("=",(width/6)*3+3,60);
+        graphics.drawString("?",(width/6)*4+3,60);
+
+        int result = num1+num2;
+        this.code = result+"";
+
+
+        //干扰数字线条
         graphics.setColor(new Color(100,100,100));
         for (int i=0;i<100;i++){
             int x = random.nextInt(width);
@@ -80,10 +98,6 @@ public class ImageCode {
             graphics.drawLine(x,y,x+x1,y+y1);
 
         }
-
-
-
-
 
         //8、收笔
         graphics.dispose();
