@@ -11,6 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @Description: com.wml.dongbao.portal.web.interceptor
  * @version: 1.0
  */
+//拦截器拦截路径的设置
+
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
     @Override
@@ -18,6 +20,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(authInterceptor())//把拦截器注入到
                 .addPathPatterns("/**")//把所有代码拦截住
         .excludePathPatterns("/user-member/login")
+        .excludePathPatterns("/jcaptcha/**")
         .excludePathPatterns("/code/**");
     }
 

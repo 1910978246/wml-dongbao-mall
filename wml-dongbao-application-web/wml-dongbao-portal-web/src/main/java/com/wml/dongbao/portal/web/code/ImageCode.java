@@ -17,6 +17,8 @@ import java.util.Random;
  * @Description: com.wml.dongbao.portal.web.code
  * @version: 1.0
  */
+//创建数字验证码
+
 @Data
 public class ImageCode {
     //图形中的内容

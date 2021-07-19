@@ -84,6 +84,7 @@ public class VerifyCodeController {
     @TokenCheck(required = false)
     public String verify(String verifyCode, HttpServletRequest request){
 
+        //校验sessionID的
         String s = request.getSession().getAttribute(attrName).toString();
         if (verifyCode.equals(s))
         {
