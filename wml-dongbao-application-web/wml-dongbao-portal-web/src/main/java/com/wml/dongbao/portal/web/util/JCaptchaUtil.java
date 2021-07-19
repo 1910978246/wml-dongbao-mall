@@ -21,7 +21,7 @@ import java.awt.*;
  * @Description: com.wml.dongbao.portal.web.util
  * @version: 1.0
  */
-//自定义工具类JCaptcha
+//自定义JCaptcha验证码工具类
 
 public class JCaptchaUtil {
 

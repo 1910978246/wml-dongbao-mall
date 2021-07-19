@@ -17,6 +17,7 @@ import java.io.ByteArrayInputStream;
  * @Description: com.wml.dongbao.portal.web.controller
  * @version: 1.0
  */
+//数字验证码
 @RestController
 @RequestMapping("/code")
 public class VerifyCodeController {

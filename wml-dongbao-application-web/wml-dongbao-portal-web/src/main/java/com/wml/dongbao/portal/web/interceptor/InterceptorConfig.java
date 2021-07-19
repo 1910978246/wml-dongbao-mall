@@ -21,6 +21,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 .addPathPatterns("/**")//把所有代码拦截住
         .excludePathPatterns("/user-member/login")
         .excludePathPatterns("/jcaptcha/**")
+        .excludePathPatterns("/happy-captcha/**")
         .excludePathPatterns("/code/**");
     }
 

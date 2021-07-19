@@ -21,6 +21,7 @@ import java.io.IOException;
  * @Description: com.wml.dongbao.portal.web.controller
  * @version: 1.0
  */
+//JCaptch验证码
 @RestController
 @RequestMapping("/jcaptcha")
 public class JCaptchController {
