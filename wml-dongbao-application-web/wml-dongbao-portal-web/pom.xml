@@ -63,18 +63,24 @@
             <scope>test</scope><!--scope作用范围-->
         </dependency>
 
-        <!--jcaptcha-->
+        <!--jcaptcha验证码所需依赖-->
         <dependency>
             <groupId>com.octo.captcha</groupId>
             <artifactId>jcaptcha</artifactId>
             <version>1.0</version>
         </dependency>
 
-        <!--Happy-Captcha-->
+        <!--Happy-Captcha验证码所需依赖-->
         <dependency>
             <groupId>com.ramostear</groupId>
             <artifactId>Happy-Captcha</artifactId>
             <version>1.0.1</version>
+        </dependency>
+        <!--easy-captcha验证码所需依赖-->
+        <dependency>
+            <groupId>com.github.whvcse</groupId>
+            <artifactId>easy-captcha</artifactId>
+            <version>1.6.2</version>
         </dependency>
 
         <dependency>
