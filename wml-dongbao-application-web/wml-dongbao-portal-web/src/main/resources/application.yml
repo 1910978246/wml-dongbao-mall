@@ -44,3 +44,22 @@ mybatis-plus:
           min-idle: 0
   # 连接超时时间（毫秒）
           timeout: 5000
+#kaptcha配置
+kaptcha:
+  height: 50
+  width: 200
+  content:
+    length: 4
+    source: abc
+    space: 2
+  font:
+    color: black
+    name: Arial
+    size: 40
+  background-color:
+    from: red
+    to: white
+  border:
+    enabled: true
+    color: black
+    thickness: 1

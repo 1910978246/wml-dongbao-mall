@@ -1,5 +1,9 @@
 package com.wml.dongbao.portal.web.advice;
 
+import com.baomidou.kaptcha.exception.KaptchaException;
+import com.baomidou.kaptcha.exception.KaptchaIncorrectException;
+import com.baomidou.kaptcha.exception.KaptchaNotFoundException;
+import com.baomidou.kaptcha.exception.KaptchaTimeoutException;
 import com.wml.dongbao.common.base.TokenException;
 import com.wml.dongbao.common.base.result.ResultWrapper;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,7 +21,7 @@ public class GlobaExceptionHandle {
 
     //@ExceptionHandler(Exception.class)
     @ExceptionHandler(ArithmeticException.class)//使异常更精细化,出现数学异常走这
-    public ResultWrapper customException(){
+    public ResultWrapper customException() {
         return ResultWrapper.builder().code(301).msg("统一异常").build();
     }
 
@@ -30,10 +34,26 @@ public class GlobaExceptionHandle {
     }*/
 
     /*
-    * 自定义token异常处理
-    * */
+     * 自定义token异常处理
+     * */
     @ExceptionHandler(TokenException.class)
-    public ResultWrapper TokenException(Exception e){
+    public ResultWrapper TokenException(Exception e) {
         return ResultWrapper.getFailBuilder().code(501).msg(e.getMessage()).build();
+    }
+
+    /*
+     * 自定义Kaptcha异常处理
+     * */
+    @ExceptionHandler(KaptchaException.class)
+    public String KaptchaException(KaptchaException e) {
+        if (e instanceof KaptchaTimeoutException) {
+            return "超时";
+        } else if (e instanceof KaptchaIncorrectException) {
+            return "不正确";
+        } else if (e instanceof KaptchaNotFoundException) {
+            return "没找到";
+        }else {
+            return "反正错了";
+        }
     }
 }
