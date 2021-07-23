@@ -2,19 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.wml</groupId>
+        <artifactId>wml-dongbao-mall-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
+    </parent>
+
 
     <groupId>com.wml</groupId>
     <artifactId>wml-dongbao-generator</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <name>wml-dongbao-geverator</name>
-    <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -23,13 +27,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>2.1.12.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.4.5</version>
             <scope>test</scope>
         </dependency>
         <!--代码生成器配置-->
@@ -38,7 +39,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.22</version>
         </dependency>
         <!--减少写getter和setter方法-->
         <dependency>
@@ -46,19 +46,15 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
         </dependency>
-
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.0.5</version>
         </dependency>
         <!--模板引擎-->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
-            <version>2.0</version>
         </dependency>
-
     </dependencies>
 
     <build>

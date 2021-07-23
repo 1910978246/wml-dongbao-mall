@@ -19,3 +19,4 @@ mybatis-plus:
     - classpath*:/com/wml/dongbao/ums/mapper/xml/*.xml
 #存放实体类的包位置
   type-aliases-package: com.wml.dongbao.ums.entity
+

@@ -1,3 +1,6 @@
 com\wml\dongbao\ums\service\UmsMemberService.class
 com\wml\dongbao\ums\entity\UmsMember.class
 com\WmlDaongbaoUmsApiApplication.class
+com\wml\dongbao\ums\entity\dto\UmsMemberLoginParamDTO.class
+com\wml\dongbao\ums\entity\response\UserMemberLoginResponse.class
+com\wml\dongbao\ums\entity\dto\UmsMemberRegisterParamDTO.class

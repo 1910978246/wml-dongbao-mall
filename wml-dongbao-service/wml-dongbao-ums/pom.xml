@@ -2,12 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.wml</groupId>
         <artifactId>wml-dongbao-service</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
     <groupId>com.wml</groupId>
     <artifactId>wml-dongbao-ums</artifactId>
@@ -15,9 +21,6 @@
     <name>wml-dongbao-ums</name>
     <description>Demo project for Spring Boot</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 
     <dependencies>
         <!--因为要实现wml.dongbao.ums.service所以依赖于wml-dongbao-ums-api-->
@@ -25,12 +28,6 @@
             <groupId>com.wml</groupId>
             <artifactId>wml-dongbao-ums-api</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <!--BCrypt(哈希)密码加密所需的依赖-->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-crypto</artifactId>
-            <version>5.3.2.RELEASE</version>
         </dependency>
         <!--把 base 的坐标放到这-->
         <dependency>
@@ -69,21 +66,29 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.0.5</version>
         </dependency>
 
         <!-- 模板引擎 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
-            <version>2.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!--BCrypt(哈希)密码加密所需的依赖-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -91,6 +96,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
         <!--在项目中有java、resource默认的情况下用到的资源xml、yml、都放在resource文件下

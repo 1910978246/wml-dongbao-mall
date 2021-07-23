@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @Description: com.wml.wmldongbaoums.mapper
  * @version: 1.0
  */
-@SpringBootTest
+@SpringBootTest(classes = com.wml.dongbao.ums.WmlDongbaoUmsApplication.class)
 public class UserMemberTest {
     @Autowired
     UmsMemberMapper umsMemberMapper;
@@ -19,7 +19,7 @@ public class UserMemberTest {
     @Test
     void testInsert(){
         UmsMember t = new UmsMember();
-        t.setUsername("小红");
+        t.setUsername("小刚");
         t.setStatus(0);
         t.setPassword("1");
         t.setNote("note");

@@ -1,1 +1,6 @@
+com\wml\dongbao\common\base\enums\StateCodeEnum.class
+com\wml\dongbao\common\base\result\ResultWrapper.class
+com\wml\dongbao\common\base\TokenException.class
+com\wml\dongbao\common\base\annotations\TokenCheck.class
+com\wml\dongbao\common\base\result\ResultWrapper$ResultWrapperBuilder.class
 com\WmlDongbaoCommonBaseApplication.class

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.wml</groupId>
+        <artifactId>wml-dongbao-application</artifactId>
+        <version>2.4.1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <groupId>com.wml</groupId>
+    <artifactId>wml-dongbao-portal-web</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>wml-dongbao-portal-web</name>
+    <description>Demo project for Spring Boot</description>
+
+    <dependencies>
+        <!--破解图形验证码所需的依赖-->
+        <!--光学识别 OCR-->
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+        </dependency>
+
+        <!--因为要引用ums-api所以依赖于wml-dongbao-ums-api-->
+        <dependency>
+            <groupId>com.wml</groupId>
+            <artifactId>wml-dongbao-ums-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wml</groupId>
+            <artifactId>wml-dongbao-ums</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--web项目所需的依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--BCrypt(哈希)密码加密所需的依赖-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <scope>test</scope><!--scope作用范围-->
+        </dependency>
+
+        <!--jcaptcha验证码所需依赖-->
+        <dependency>
+            <groupId>com.octo.captcha</groupId>
+            <artifactId>jcaptcha</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.jhlabs</groupId>
+                    <artifactId>imaging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--Happy-Captcha验证码所需依赖-->
+        <dependency>
+            <groupId>com.ramostear</groupId>
+            <artifactId>Happy-Captcha</artifactId>
+        </dependency>
+        <!--easy-captcha验证码所需依赖-->
+        <dependency>
+            <groupId>com.github.whvcse</groupId>
+            <artifactId>easy-captcha</artifactId>
+        </dependency>
+        <!--easy-captcha结合Redis所需依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--Kcaptcha验证码所需依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>kaptcha-spring-boot-starter</artifactId>
+        </dependency>
+        <!--滑块验证码所需的依赖-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--<plugin>
+               <artifactId>maven-assembly-plugin</artifactId>
+               <configuration>
+                   <archive>
+                       <manifest>
+                           <mainClass>com.wml.dongbao.portal.web.WmlDongbaoPortalWebApplication</mainClass>
+                       </manifest>
+                   </archive>
+                   <descriptorRefs>
+                       <descriptorRef>jar-with-dependencies</descriptorRef>
+                   </descriptorRefs>
+               </configuration>
+           </plugin>-->
+        </plugins>
+
+        <resources>
+            <resource>
+                <!--打包该目录下的 application.yml -->
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>application.yml</include>
+                </includes>
+                <!-- 启用过滤 即该资源中的变量将会被过滤器中的值替换 -->
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <!-- ${profiles.active}由profile提供 -->
+                <directory>src/main/resources/${profiles.active}</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>
