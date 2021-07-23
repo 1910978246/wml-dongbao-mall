@@ -136,7 +136,7 @@
             <!--jcaptcha验证码所需依赖-->
             <dependency>
                 <groupId>com.octo.captcha</groupId>
-                <artifactId>jcaptcha</artifactId>
+                <artifactId>jcaptcha</artifactId><!--有javax.servlet-api.jar-->
                 <version>${jcaptcha.version}</version>
                 <exclusions>
                     <exclusion>
@@ -166,7 +166,7 @@
             <!--Kcaptcha验证码所需依赖-->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>kaptcha-spring-boot-starter</artifactId>
+                <artifactId>kaptcha-spring-boot-starter</artifactId><!--有javax.servlet-api.jar-->
                 <version>${kaptcha-spring.version}</version>
             </dependency>
             <!--滑块验证码所需的依赖-->
