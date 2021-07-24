@@ -2,7 +2,7 @@ package com.wml.dongbao.ums.service.impl;
 
 import com.wml.dongbao.common.base.enums.StateCodeEnum;
 import com.wml.dongbao.common.base.result.ResultWrapper;
-import com.wml.dongbao.common.until.JwtUtil;
+import com.wml.dongbao.common.util.JwtUtil;
 import com.wml.dongbao.ums.entity.UmsMember;
 import com.wml.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;

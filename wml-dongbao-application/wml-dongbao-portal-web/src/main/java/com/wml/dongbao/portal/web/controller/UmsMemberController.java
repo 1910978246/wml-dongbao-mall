@@ -2,17 +2,14 @@ package com.wml.dongbao.portal.web.controller;
 
 import com.wml.dongbao.common.base.annotations.TokenCheck;
 import com.wml.dongbao.common.base.result.ResultWrapper;
-import com.wml.dongbao.common.until.JwtUtil;
 import com.wml.dongbao.ums.entity.UmsMember;
 import com.wml.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.wml.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.wml.dongbao.ums.service.UmsMemberService;
-import jdk.nashorn.internal.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Email;
 
 /**
  * @Auther: 王明礼

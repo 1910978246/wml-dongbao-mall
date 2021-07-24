@@ -1,4 +1,4 @@
-package com.wml.dongbao.common.until;
+package com.wml.dongbao.common.util;
 
 import org.apache.commons.codec.binary.Base64;
 

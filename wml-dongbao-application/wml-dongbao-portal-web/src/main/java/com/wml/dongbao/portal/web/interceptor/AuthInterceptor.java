@@ -2,7 +2,7 @@ package com.wml.dongbao.portal.web.interceptor;
 
 import com.wml.dongbao.common.base.TokenException;
 import com.wml.dongbao.common.base.annotations.TokenCheck;
-import com.wml.dongbao.common.until.JwtUtil;
+import com.wml.dongbao.common.util.JwtUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;

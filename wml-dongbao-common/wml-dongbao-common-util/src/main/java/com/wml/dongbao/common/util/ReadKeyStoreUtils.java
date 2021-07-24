@@ -1,4 +1,4 @@
-package com.wml.dongbao.common.until;
+package com.wml.dongbao.common.util;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

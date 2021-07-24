@@ -1,4 +1,4 @@
-package com.wml.dongbao.common.until;
+package com.wml.dongbao.common.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

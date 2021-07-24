@@ -73,6 +73,7 @@
         <velocity-engine.version>2.0</velocity-engine.version>
         <nacos-client.version>1.4.0</nacos-client.version>
         <commons-codec.version>1.14</commons-codec.version>
+        <fastjson.version>1.2.47</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -188,6 +189,14 @@
                 <artifactId>commons-codec</artifactId>
                 <version>${commons-codec.version}</version>
             </dependency>
+            <!--把json-object-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 <!-- 配置maven的编译插件 -->
