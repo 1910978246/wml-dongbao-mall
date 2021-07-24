@@ -30,7 +30,7 @@ public class ApiSafeController {
 	public String getTest(String appId, String name , String sign , long timestamp , HttpServletRequest httpServletRequest){
 
 		// 为了排序
-		HashMap<String,String> map= new HashMap<>();
+		HashMap<String, Object> map= new HashMap<>();
 
 		// 参数写死
 //		map.put("appId",appId);
