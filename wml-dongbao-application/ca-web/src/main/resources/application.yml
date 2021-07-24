@@ -1,3 +1,7 @@
+#http端口
+http-port: 82
+
+#HTTPS端口
 server:
   port: 80
 

@@ -11,6 +11,8 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.HashMap;
 import java.util.Map;
 
+//固定的写法
+//生成密钥
 public class RSAEncrypt {
 
 
