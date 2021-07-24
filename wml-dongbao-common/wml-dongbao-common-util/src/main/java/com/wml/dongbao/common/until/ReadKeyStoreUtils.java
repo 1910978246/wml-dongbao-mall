@@ -148,7 +148,7 @@ public class ReadKeyStoreUtils {
 
 	public static void main(String[] args) throws Exception {
         //这里改成自己密钥库的地址
-		String keyStorePath = "F:\\Java-Code\\Key-certificate\\dongbao-alias.keystore";
+		String keyStorePath = "F:\\Java-Code\\Key-certificate\\b\\dongbao-alias.keystore";
 
 		String strPublicKey = getStrPublicKey(keyStorePath, "dongbao-alias", "123456");
 		System.out.println("公钥："+strPublicKey);

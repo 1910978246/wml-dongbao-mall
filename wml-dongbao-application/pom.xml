@@ -25,6 +25,7 @@
     <modules>
         <module>wml-dongbao-manager-web</module>
         <module>wml-dongbao-portal-web</module>
+        <module>ca-web</module>
     </modules>
 
     <dependencies>
